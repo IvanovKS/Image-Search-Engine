@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   border: 0;
+  font-family: 'Poppins', sans-serif;
 }
 *,
 *:before,
@@ -34,6 +35,8 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  background-color: #493696;
+  color: white;
 }
 input,
 button,
