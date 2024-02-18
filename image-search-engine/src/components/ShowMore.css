@@ -8,5 +8,8 @@
   outline: 0;
   cursor: pointer;
   margin: 10px auto 100px;
-  /* display: none; */
+  display: none;
+}
+.active {
+  display: block;
 }

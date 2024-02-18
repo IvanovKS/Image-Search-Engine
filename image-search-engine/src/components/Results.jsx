@@ -5,7 +5,7 @@ function Results({keyword, values}) {
     <img key={el.id} src={el.urls.small} alt={keyword} />
   ));
   return (
-    <div>{images}</div>
+    <div className="search-results">{images}</div>
   );
 }
 

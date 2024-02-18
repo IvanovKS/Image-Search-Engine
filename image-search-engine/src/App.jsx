@@ -11,7 +11,7 @@ function App() {
   let page = 1;
 
   async function handleClick() {
-    const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}`;
+    const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=12`;
     const response = await fetch(url);
     const data = await response.json();
     const results = data.results;
@@ -29,7 +29,7 @@ function App() {
       <Results  keyword={keyword}
                 values={values}
       />
-      <ShowMore />
+      <ShowMore isActive={values.length !== 0}/>
     </div>
   );
 }

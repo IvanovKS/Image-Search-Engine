@@ -1,8 +1,8 @@
 import './ShowMore.css';
 
-function ShowMore() {
+function ShowMore({isActive}) {
   return (
-    <button className="show-btn">Show more</button>
+    <button className={isActive ? "show-btn active" : "show-btn"}>Show more</button>
   );
 }
 
