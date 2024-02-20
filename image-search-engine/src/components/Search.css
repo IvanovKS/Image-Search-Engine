@@ -35,7 +35,12 @@ form button {
   cursor: pointer;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  transition: .3s ease-in-out;
 }
 form button:hover {
   background-color: #d36a0d;
+  transition: .3s ease-in-out;
+}
+form button:active {
+  color:black;
 }

@@ -9,6 +9,14 @@
   cursor: pointer;
   margin: 10px auto 100px;
   display: none;
+  transition: .3s ease-in-out;
+}
+.show-btn:hover {
+  background-color: #d36a0d;
+  transition: .3s ease-in-out;
+}
+.show-btn:active {
+  color:black;
 }
 .active {
   display: block;

@@ -19,9 +19,11 @@ function App() {
     SetValues(results);
   }
   function handleChange(event) {
+    console.log(event.target.value)
     setKeyword(event.target.value);
     page = 1;
     pages = 12;
+    console.log(keyword)
   }
   function handleShowMore() {
     page++;
