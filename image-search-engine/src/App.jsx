@@ -12,18 +12,23 @@ function App() {
   const [values, SetValues] = useState([]);
 
   async function handleClick() {
-    const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=${pages}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    const results = data.results;
-    SetValues(results);
+    try {
+      const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=${pages}`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      const results = data.results;
+      SetValues(results);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   }
   function handleChange(event) {
-    console.log(event.target.value)
     setKeyword(event.target.value);
     page = 1;
     pages = 12;
-    console.log(keyword)
   }
   function handleShowMore() {
     page++;
