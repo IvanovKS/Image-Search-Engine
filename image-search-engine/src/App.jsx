@@ -11,7 +11,8 @@ function App() {
   const [keyword, setKeyword] = useState('');
   const [values, SetValues] = useState([]);
 
-  async function handleClick() {
+  async function handleClick(e) {
+    e.preventDefault();
     try {
       const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=${pages}`;
       const response = await fetch(url);
@@ -27,7 +28,6 @@ function App() {
   }
   function handleChange(event) {
     setKeyword(event.target.value);
-    page = 1;
     pages = 12;
   }
   function handleShowMore() {
@@ -40,6 +40,7 @@ function App() {
     <div>
       <Search btnClicked={handleClick}
               onChanged={handleChange}
+              handleSubmit={handleClick}
       />
       <Results  keyword={keyword}
                 values={values}
