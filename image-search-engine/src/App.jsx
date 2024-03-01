@@ -30,10 +30,10 @@ function App() {
     setKeyword(event.target.value);
     pages = 12;
   }
-  function handleShowMore() {
+  function handleShowMore(e) {
     page++;
     pages += 12;
-    handleClick();
+    handleClick(e);
   }
 
   return (
